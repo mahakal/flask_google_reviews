@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Google Reviews
+{% endblock %}
+
+{% block content %}
+<div class="card-columns">
+    {% for row in data %}
+    
+        <div class="card bg-light border-dark" >
+            <div class="card-body">  
+                <h5 class="card-title">{{row[0]}}</h5>
+                <p class="card-text card-subtitle mb-2 text-muted">
+                {% for cell in row[1:4] %}
+                    {{cell}} &nbsp; &nbsp;
+                {% endfor %}
+                </p>
+                <p class="card-text">
+                    {{row[4]}}
+                </p>  
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
